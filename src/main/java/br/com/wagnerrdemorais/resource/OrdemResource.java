@@ -3,6 +3,7 @@ package br.com.wagnerrdemorais.resource;
 import br.com.wagnerrdemorais.model.Ordem;
 import br.com.wagnerrdemorais.repository.OrdemRepository;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -20,6 +21,7 @@ public class OrdemResource {
     @POST
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
+    @RolesAllowed("user")
     public void inserir(Ordem ordem) {
         ordem.setData(new Date());
         ordem.setStatus("ENVIADA");
