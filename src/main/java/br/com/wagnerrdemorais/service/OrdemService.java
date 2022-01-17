@@ -8,6 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.core.SecurityContext;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
@@ -30,5 +31,9 @@ public class OrdemService {
         ordem.setData(new Date());
         ordem.setStatus("ENVIADA");
         ordemRepository.persist(ordem);
+    }
+
+    public List<Ordem> listar() {
+        return ordemRepository.listAll();
     }
 }

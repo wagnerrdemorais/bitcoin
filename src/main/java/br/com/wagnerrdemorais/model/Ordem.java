@@ -1,5 +1,6 @@
 package br.com.wagnerrdemorais.model;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -43,7 +44,24 @@ public class Ordem {
         this.userId = userId;
     }
 
+    @JsonbTransient
     public int getUserId() {
         return userId;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }
