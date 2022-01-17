@@ -12,8 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.resource.spi.work.SecurityContext;
-import javax.ws.rs.core.Context;
 
 @Entity
 @UserDefinition
